@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keripik Cindy Aremania - Keripik Pilihan Terbaik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #778fcb 0%, #c2e9fb 50%, #e0c3fc 100%);
+        }
+        .gradient-blue {
+            background: linear-gradient(135deg, #89b5f7 0%, #a8d5ff 50%, #c5e3ff 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(137, 181, 247, 0.3);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }    
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-blue-100 to-purple-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-blue-300/60 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                        <span class="text-2xl">🥔</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-blue-800">Keripik Cindy Aremania</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-blue-700 hover:text-orange-500 transition font-medium">Beranda</a>
+                    <a href="#products" class="text-blue-700 hover:text-orange-500 transition font-medium">Produk</a>
+                    <a href="#order" class="text-blue-700 hover:text-orange-500 transition font-medium">Pesan</a>
+                    <a href="#contact" class="text-blue-700 hover:text-orange-500 transition font-medium">Kontak</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="container mx-auto px-6 py-20">
+        <div class="text-center">
+            <h2 class="text-5xl md:text-6xl font-bold text-blue-800 mb-6 animate-float">
+                Keripik Cindy Aremania
+            </h2>
+            <p class="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
+                Keripik pilihan dengan 8 varian rasa yang menggugah selera. Renyah, gurih, dan bikin ketagihan!
+            </p>
+            <a href="#products" class="inline-block bg-gradient-to-r from-blue-300 to-purple-300 text-blue-900 font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition transform hover:scale-105">
+                Lihat Produk Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto px-6 py-16">
+        <h3 class="text-4xl font-bold text-center text-blue-800 mb-12">Varian Keripik Kami</h3>
+        
+        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Products will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="container mx-auto px-6 py-16">
+        <div class="max-w-2xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl p-8">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 text-center">Pesan Sekarang</h3>
+            
+            <form id="orderForm" class="space-y-4">
+                <div>
+                    <label class="block text-blue-800 mb-2 font-medium">Nama Lengkap</label>
+                    <input type="text" id="customerName" required class="w-full px-4 py-3 rounded-lg bg-white/80 text-blue-900 placeholder-blue-400 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Masukkan nama Anda">
+                </div>
+                
+                <div>
+                    <label class="block text-blue-800 mb-2 font-medium">Nomor WhatsApp</label>
+                    <input type="tel" id="customerPhone" required class="w-full px-4 py-3 rounded-lg bg-white/80 text-blue-900 placeholder-blue-400 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="08xxxxxxxxxx">
+                </div>
+                
+                <div>
+                    <label class="block text-blue-800 mb-2 font-medium">Pilih Keripik</label>
+                    <select id="productSelect" required class="w-full px-4 py-3 rounded-lg bg-white/80 text-blue-900 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <option value="">Pilih varian keripik...</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-blue-800 mb-2 font-medium">Jumlah (pack)</label>
+                    <input type="number" id="quantity" min="1" value="1" required class="w-full px-4 py-3 rounded-lg bg-white/80 text-blue-900 placeholder-blue-400 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                </div>
+                
+                <div>
+                    <label class="block text-blue-800 mb-2 font-medium">Alamat Pengiriman</label>
+                    <textarea id="address" rows="3" required class="w-full px-4 py-3 rounded-lg bg-white/80 text-blue-900 placeholder-blue-400 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Masukkan alamat lengkap"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-300 to-purple-300 text-blue-900 font-semibold px-8 py-4 rounded-full hover:shadow-2xl transition transform hover:scale-105">
+                    Kirim Pesanan
+                </button>
+            </form>
+            
+            <div id="orderStatus" class="mt-4 text-center text-blue-800 hidden"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-6 py-16">
+        <div class="text-center text-blue-800">
+            <h3 class="text-3xl font-bold mb-6">Hubungi Kami</h3>
+            <p class="text-xl mb-4">📱 WhatsApp: 0812-3456-7890</p>
+            <p class="text-xl mb-4">📧 Email: keripikcindy@gmail.com</p>
+            <p class="text-xl">📍 Malang, Jawa Timur</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-300/60 backdrop-blur-md py-6 mt-16">
+        <div class="container mx-auto px-6 text-center text-blue-800">
+            <p>&copy; 2024 Keripik Cindy Aremania. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Google Sheets Configuration
+        // INSTRUKSI: Ganti dengan URL Google Apps Script Web App Anda
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQn2tKbU7tAMircl_lmnhT7G9ceq4xDwUOdGbrCTmGXHfoL61glro9tAJHf_6r5qljzQ/exec';
+        
+        // Data produk default (akan diganti dengan data dari Google Sheets)
+        let products = [
+            { name: 'Keripik Singkong Manis', price: 15000, description: 'Manis dan renyah khas singkong', emoji: '🍠' },
+            { name: 'Keripik Singkong Asin Gurih', price: 15000, description: 'Gurih asin yang bikin nagih', emoji: '🥔' },
+            { name: 'Keripik Singkong Balado', price: 17000, description: 'Pedas balado yang menggigit', emoji: '�️' },
+            { name: 'Stick Talas', price: 16000, description: 'Stick talas renyah dan unik', emoji: '�' },
+            { name: 'Gelombang Talas', price: 16000, description: 'Bentuk gelombang yang menarik', emoji: '🌊' },
+            { name: 'Pisang', price: 18000, description: 'Keripik pisang manis alami', emoji: '🍌' },
+            { name: 'Ubi Ungu', price: 19000, description: 'Ubi ungu kaya antioksidan', emoji: '💜' }
+        ];
+
+        // Load products from Google Sheets (if configured)
+        async function loadProducts() {
+            try {
+                if (SCRIPT_URL && SCRIPT_URL.includes('script.google.com')) {
+                    const response = await fetch(SCRIPT_URL + '?action=getProducts');
+                    const data = await response.json();
+                    if (data.products && data.products.length > 0) {
+                        products = data.products;
+                    }
+                }
+            } catch (error) {
+                console.log('Using default products data');
+            }
+            displayProducts();
+        }
+
+        // Display products
+        function displayProducts() {
+            const container = document.getElementById('products-container');
+            const select = document.getElementById('productSelect');
+            
+            container.innerHTML = '';
+            select.innerHTML = '<option value="">Pilih varian keripik...</option>';
+            
+            products.forEach((product, index) => {
+                // Create product card
+                const card = `
+                    <div class="bg-white/60 backdrop-blur-md rounded-2xl p-6 card-hover border border-blue-200">
+                        <div class="text-6xl text-center mb-4">${product.emoji}</div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2 text-center">${product.name}</h4>
+                        <p class="text-blue-600 text-center mb-4">${product.description}</p>
+                        <p class="text-2xl font-bold text-orange-500 text-center">Rp ${product.price.toLocaleString('id-ID')}</p>
+                    </div>
+                `;
+                container.innerHTML += card;
+                
+                // Add to select dropdown
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${product.name} - Rp ${product.price.toLocaleString('id-ID')}`;
+                select.appendChild(option);
+            });
+        }
+
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const statusDiv = document.getElementById('orderStatus');
+            statusDiv.classList.remove('hidden');
+            statusDiv.innerHTML = '<p class="text-orange-500 font-semibold">⏳ Mengirim pesanan...</p>';
+            
+            const formData = {
+                name: document.getElementById('customerName').value,
+                phone: document.getElementById('customerPhone').value,
+                product: products[document.getElementById('productSelect').value].name,
+                price: products[document.getElementById('productSelect').value].price,
+                quantity: document.getElementById('quantity').value,
+                address: document.getElementById('address').value,
+                timestamp: new Date().toLocaleString('id-ID')
+            };
+            
+            try {
+                if (SCRIPT_URL && SCRIPT_URL.includes('script.google.com')) {
+                    // Send to Google Sheets
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    if (response.ok) {
+                        statusDiv.innerHTML = '<p class="text-green-600 font-semibold">✅ Pesanan berhasil dikirim! Kami akan segera menghubungi Anda.</p>';
+                        document.getElementById('orderForm').reset();
+                    } else {
+                        throw new Error('Failed to submit');
+                    }
+                } else {
+                    // Demo mode - show success without actually sending
+                    setTimeout(() => {
+                        statusDiv.innerHTML = '<p class="text-orange-600 font-semibold">⚠️ Mode Demo: Silakan konfigurasi Google Sheets terlebih dahulu. Pesanan tidak tersimpan.</p>';
+                    }, 1000);
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '<p class="text-red-600 font-semibold">❌ Terjadi kesalahan. Silakan coba lagi atau hubungi kami via WhatsApp.</p>';
+            }
+        });
+
+        // Initialize
+        loadProducts();
+    </script>
+</body>
+</html>
